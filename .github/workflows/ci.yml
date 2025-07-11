@@ -59,6 +59,3 @@ jobs:
 
       - name: Run tests
         run: npm run test -- --runInBand --detectOpenHandles
-
-      - name: Run coverage
-        run: npm run test:coverage
