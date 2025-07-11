@@ -1,0 +1,28 @@
+# Ignora dependencias instaladas localmente
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Ignora archivos de entorno
+.env
+.env.local
+.env.test
+
+# Ignora archivos de pruebas y cobertura
+coverage
+__tests__
+*.test.js
+
+# Ignora archivos de configuración específicos del editor
+.vscode
+.idea
+.DS_Store
+
+# Ignora archivos generados por Git
+.git
+.gitignore
+
+# Otros archivos que no son necesarios en producción
+docker-compose.yml
+*.md
+*.log
