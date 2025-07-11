@@ -28,9 +28,9 @@ jobs:
     env:
       DB_HOST: postgres
       DB_PORT: '5432'
-      DB_USER: 'postgres'
-      DB_PASSWORD: 'postgres'
-      DB_NAME: 'testdb'
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'postgres'
+      POSTGRES_DB: 'testdb'
       NODE_ENV: 'test'
       JWT_SECRET: 'github_test_secret'
 
