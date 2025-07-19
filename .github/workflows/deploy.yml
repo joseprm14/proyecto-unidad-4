@@ -1,4 +1,4 @@
-name: CI/CD with Docker on Heroku
+name: Deploy to Railway
 
 on:
   push:
@@ -12,17 +12,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Login to Heroku Container Registry
-        run: echo "${{ secrets.HEROKU_API_KEY }}" | docker login --username=_ --password-stdin registry.heroku.com
+      - name: Install Railway CLI
+        run: npm install -g railway
 
-      - name: Build Docker image
-        run: docker build -t registry.heroku.com/${{ secrets.HEROKU_APP_NAME }}/web .
-
-      - name: Push Docker image to Heroku
-        run: docker push registry.heroku.com/${{ secrets.HEROKU_APP_NAME }}/web
-
-      - name: Release image on Heroku
-        run: |
-          heroku container:release web --app ${{ secrets.HEROKU_APP_NAME }}
+      - name: Deploy to Railway
+        run: railway up --service backend
         env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_PROJECT_ID: ${{ secrets.RAILWAY_PROJECT_ID }}

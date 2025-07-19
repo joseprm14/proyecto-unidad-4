@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-// Middleware de autenticacion con jasonwebtoken
+// Middleware de autenticacion con jsonwebtoken
 const auth = (req, res, next) => {
   // Comprueba si hay token y si este es valido
   const token = req.headers.authorization?.split(" ")[1];
