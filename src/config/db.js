@@ -5,7 +5,7 @@ dotenv.config();
 
 const isProduction = process.env.NODE_ENV === 'production';
 
-// Definimos la base de datos para sequelize utilizando variables de entorno
+// Definimos la base de datos para sequelize utilizando las variables de entorno
 const sequelize = isProduction ? 
     new Sequelize(process.env.DATABASE_URL, {
         dialect: 'postgres',
